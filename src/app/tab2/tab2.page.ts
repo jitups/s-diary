@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
   selector: 'app-tab2',
@@ -6,7 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+  public diary: any;
 
-  constructor() {}
+  constructor(private db: AngularFireDatabase) {
+    db.list('/Diary').valueChanges().subscribe(response => this.diary = response);
+  }
 
 }
