@@ -13,5 +13,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-textarea rows="10" [(ngModel)]="Entry"></ion-textarea>
+  <ion-button expand="block" (click)="addItem()">Submit</ion-button>
+
 </ion-content>
