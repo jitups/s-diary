@@ -1,19 +1,30 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Add
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<div *ngIf="!IsUserNameSaved">
+  <ion-item>
+    <ion-label position="stacked"> Enter Your Name: <ion-text color="danger">*</ion-text></ion-label>
+    <ion-input required type="text" [(ngModel)]="UserName" ></ion-input>
+  </ion-item>
+  <ion-item> 
+    <ion-button expand="block" (click)="saveUserName()">Submit</ion-button>
+  </ion-item>
+</div>
+<div *ngIf="IsUserNameSaved">
+  <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-title size="large">Diary</ion-title>
+      <ion-title>
+        Add
+      </ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <ion-textarea rows="10" [(ngModel)]="Entry"></ion-textarea>
-  <ion-button expand="block" (click)="addItem()">Submit</ion-button>
+  <ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Diary</ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-</ion-content>
+    <ion-textarea rows="10" [(ngModel)]="Entry"></ion-textarea>
+    <ion-button expand="block" (click)="addItem()">Submit</ion-button>
+
+  </ion-content>
+</div>
