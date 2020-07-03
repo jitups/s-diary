@@ -16,8 +16,11 @@ export class Tab3Page {
 
   search() {
     this.db.list('/Diary', ref =>
-      ref.orderByChild("date").equalTo(this.date))
-      .valueChanges().subscribe(response => this.diary = response);
+      ref.orderByChild("Date").equalTo(this.date)) // added indexon rule on Date in database
+      .valueChanges().subscribe(response =>{
+                  console.log(response);
+                  this.diary = response;
+                });
   }
 
 }
