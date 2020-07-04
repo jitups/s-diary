@@ -8,6 +8,14 @@ ionic build // to build app locally
 
 ionic serve // to run app locally
 
+ionic cordova run browser // to run app locally with native plug-in
+
+to create virtual device
+C:\Android\android-sdk\tools\bin>avdmanager create avd -n test -k "system-images;android-28;google_apis_playstore;x86"
+
+to run on virtual device
+ionic cordova emulate android
+
 ionic cordova  build --release android // to create apk
 
 //to sign apk
